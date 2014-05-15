@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        margin:0;
+        padding:0;
+      }
+      #message{
+        background-color:white;
+        display:none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message"></div>
+    <iframe id="content" style="width:320px;height:480px;position:absolute;top:0px;left:0px;"></iframe>
+    <script>
+      window.addEventListener("message", receiveMessage, false);
+
+      function receiveMessage(event) {
+        document.getElementById('content').src = event.data;
+      }
+    </script>
+  </body>
+</html>

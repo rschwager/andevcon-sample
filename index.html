@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <h3>Millennial Media AnDevCon Sample Chrome App</h3>
+    <p><b>The app demonstrates several ways to load external content</b></p>
+    <p>Using the WebView tag.</p>
+    <webview id="adcall1" src="http://a.jumptap.com/a/ads?f=xhtml&mt-tt=ri&v=v3050&pub=po&q=hackmatch&site=po_proxytest_wap_site&spot=po_proxytest_wap_site_banner" style="width:350px; height:75px" autosize="true"></webview>
+    <p>Pros:
+    <ul>
+      <li>Simple</li>
+      <li>Content is sandboxed</li>
+    </ul>
+    Cons:
+    <ul>
+      <li>Only works on the desktop</li>
+      <li>Content is locked in the webview window.  For banner ads, this is problematic as the landing page is larger than the initial banner</li>
+    </ul>
+    </p>
+
+    <p><b>Using XmlHttpRequest calls</b></p>
+    <div id="adContent"></div>
+    <p>Pros:
+    <ul>
+      <li>Content is in main window.</li>
+      <li>For ads, the click action can be expanded into full window or a new browser window</li>
+    </ul>
+    Cons:
+    <ul>
+      <li>Parsing of content is hacky and can lead to bugs</li>
+      <li>If content contains scripts, there is a risk of it violating the Content Security Policies and failing to load.</li>
+    </ul>
+    </p>
+
+    <p><b>Using a sandboxed window</b></p>
+    <iframe src="sandboxed.html" frameBorder="0" width="350" height="75"></iframe>
+    <iframe id="landingpage" src="landingpage.html" style="display:none;width:100%;height:100%;position:absolute;top:0px;left:0px"></iframe>
+
+
+    <div id="close" class="closeButton hidden">
+      <img src="icons/close.png" class="closeButton"></img>
+    </div>
+    <p>Pros:
+    <ul>
+      <li>Javascript content can be evaluated.</li>
+      <li>For ads, the click action can be expanded into full window or a new browser window</li>
+    </ul>
+    Cons:
+    <ul>
+      <li>Sandboxed content doesn't have access to Chrome Apis and Services</li>
+    </ul>
+    </p>
+
+<script src="js/jquery.js"></script>
+<script src="js/adcalls.js"></script>
+</body>
+</html>

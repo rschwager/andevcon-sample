@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Millennial Media AnDevCon Sample Application",
+  "version": "1.0",
+  "minimum_chrome_version": "23",
+  "icons": {
+    "16": "icons/icon_16.png",
+    "128": "icons/icon_128.png"
+  },
+  "sandbox": {
+    "pages": ["sandboxed.html","landingpage.html"]
+  },
+  "app": {
+    "background": {
+      "scripts": ["main.js"]
+    }
+  },
+  "permissions": [
+    "webview",
+    "<all_urls>"
+  ]
+}

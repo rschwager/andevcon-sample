@@ -1,0 +1,16 @@
+html, body {
+  height: 100%;
+}
+
+.closeButton{
+  width:30px;
+  height:30px;
+}
+
+.hidden{
+  display:none;
+}
+
+#close{
+  position:absolute;z-index:9999;top:0px;right:0px;
+}
