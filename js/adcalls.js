@@ -4,7 +4,13 @@ $(document).ready(function(){
 
   // For the webview call, which only works on the desktop, force the user 
   // agent to be an android handset
-  webview.setUserAgentOverride("Mozilla/5.0 (Linux; U; Android 2.2; en-us; DROID2 GLOBAL Build/S273) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533");
+  try {
+    webview.setUserAgentOverride("Mozilla/5.0 (Linux; U; Android 2.2; en-us; DROID2 GLOBAL Build/S273) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533");
+  }
+  catch (err) {
+    // no-op - on the mobile device, the webview object doesn't have the 
+    // method as it isn't supported..
+  }
 
   // Force an ad call for the XHR section
   loadAdThroughXHR();
@@ -23,7 +29,7 @@ $(document).ready(function(){
 
 function loadAdThroughXHR() {
 
-    var url = 'http://a.jumptap.com/a/ads?f=xhtml&mt-tt=ri&v=v3050&pub=po&q=hackmatch&site=po_proxytest_wap_site&spot=po_proxytest_wap_site_banner';
+    var url = 'http://a.jumptap.com/a/ads?f=xhtml&mt-tt=ri&v=v3050&pub=po&q=hackmatch&site=po_proxytest_wap_site&spot=po_proxytest_wap_site_banner&template=iphone';
 
     $('#adContent').html('');
     $.ajax({

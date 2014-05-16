@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 function loadAdThroughXHR() {
 
-    var url = 'http://a.jumptap.com/a/ads?f=xhtml&mt-tt=ri&v=v3050&pub=po&q=hackmatch&site=po_proxytest_wap_site&spot=po_proxytest_wap_site_banner';
+    var url = 'http://a.jumptap.com/a/ads?f=xhtml&mt-tt=ri&v=v3050&pub=po&q=hackmatch&site=po_proxytest_wap_site&spot=po_proxytest_wap_site_banner&template=iphone';
 
     $('#adContent').html('');
     $.ajax({
