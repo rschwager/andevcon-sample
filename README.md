@@ -10,6 +10,8 @@ The app demonstrates some of the challenges of loading external content in a Chr
   - Using an XmlHttpRequest to load content externally and then converting all the images to inline images.
   - Using a sandbox to fetch and display the content.
 
+This code contains only the Chome web application code.  If you want to run it on an iOS or Android device, read the Mobile App documentation linked below which will walk you through using the cca command line tool.
+
 This was born out of a hackathon that happened at Millennial Media with Elena Hearty and TJ Kirchner.  We wrote up a blog entry on our project.  That can be found at: http://www.millennialmedia.com/blog/2014/03/addressing-google-chrome-web-apps/.
 
 Interesting links:
